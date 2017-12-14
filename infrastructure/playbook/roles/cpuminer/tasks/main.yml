@@ -1,0 +1,44 @@
+- name: Are cpuminer cloned?
+  sudo_user: "{{ user }}"
+  stat:
+    path: "/home/{{ user }}/cpuminer"
+  register: d
+
+- name: Git clone
+  sudo_user: "{{ user }}"
+  command: git clone https://github.com/bitzeny/cpuminer.git
+  when: not d.stat.exists
+
+- name: Are cpuminer installed?
+  sudo_user: "{{ user }}"
+  stat:
+    path: "/home/{{ user }}/cpuminer/minerd"
+  register: f
+
+- name: autogen.sh
+  sudo_user: "{{ user }}"
+  command: ./autogen.sh
+  args:
+    chdir: ~/cpuminer/
+  when: not f.stat.exists
+
+- name: nomacro.pl
+  sudo_user: "{{ user }}"
+  command: ./nomacro.pl
+  args:
+    chdir: ~/cpuminer/
+  when: not f.stat.exists
+
+- name: configure
+  sudo_user: "{{ user }}"
+  command: ./configure CFLAGS="-O3 -march=native -funroll-loops -fomit-frame-pointer"
+  args:
+    chdir: ~/cpuminer/
+  when: not f.stat.exists
+
+- name: make
+  sudo_user: "{{ user }}"
+  command: make
+  args:
+    chdir: ~/cpuminer/
+  when: not f.stat.exists

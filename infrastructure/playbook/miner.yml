@@ -1,9 +1,8 @@
 - name: Prepare miner
-  become: yes
+  sudo: yes
   hosts: miner
   vars_files:
     - 'vars_files/common.yml'
   roles:
     - apt
-    - common
-    - ntpd
+    - cpuminer

@@ -27,9 +27,12 @@ $ ansible-playbook -i machines miner.yml
 
 ### Start mining
 
-TODO...
+Sorry. Mining is currently manual operation.
+
+- Manualy login. and start tmux and start mining with `~/cpuminer/minerd`
+  - Login user: `miner@YOUR-HOSTNAME`
 
 ## Donate
 
-ZNY: ZjreyuNjZnKLZM173tQ3DxiYb9ZJUEHUAV
-MONA: MHYeVeMTjLeauhtvSETyBwZCFcVjzeHrNd
+ZNY: `ZjreyuNjZnKLZM173tQ3DxiYb9ZJUEHUAV`
+MONA: `MHYeVeMTjLeauhtvSETyBwZCFcVjzeHrNd`
