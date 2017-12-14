@@ -1,0 +1,25 @@
+- name: Install libraries
+  apt:
+    pkg: "{{ item }}"
+    state: installed
+  with_items:
+    - autoconf
+    - automake
+    - bison
+    - bzip2
+    - bzip2-devel
+    - gcc
+    - gcc-c++
+    - git
+    - glibc-devel
+    - glibc-headers
+    - httpd-tools
+    - libcurl-devel
+    - libtool
+    - libyaml-devel
+    - openssl
+    - openssl-devel
+    - patch
+    - readline-devel
+    - tmux
+    - zlib-devel

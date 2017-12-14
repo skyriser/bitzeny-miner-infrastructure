@@ -1,0 +1,7 @@
+[miner]
+miner-server-1
+miner-server-2
+miner-server-3
+
+[machines:children]
+miner

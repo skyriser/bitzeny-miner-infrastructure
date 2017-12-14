@@ -1,0 +1,9 @@
+- name: Prepare miner
+  become: yes
+  hosts: miner
+  vars_files:
+    - 'vars_files/common.yml'
+  roles:
+    - apt
+    - common
+    - ntpd
