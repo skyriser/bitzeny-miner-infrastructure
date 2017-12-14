@@ -6,7 +6,7 @@
 
 - name: Git clone
   sudo_user: "{{ user }}"
-  command: git clone https://github.com/bitzeny/cpuminer.git
+  command: git clone https://github.com/macchky/cpuminer.git
   when: not d.stat.exists
 
 - name: Are cpuminer installed?
