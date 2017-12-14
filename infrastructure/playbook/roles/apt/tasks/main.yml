@@ -14,3 +14,4 @@
     - curl
     - libjansson-dev
     - libcurl4-openssl-dev
+    - cpulimit
