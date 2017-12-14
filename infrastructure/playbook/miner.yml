@@ -5,4 +5,6 @@
     - 'vars_files/common.yml'
   roles:
     - apt
+    - common
     - cpuminer
+    - ntpd
